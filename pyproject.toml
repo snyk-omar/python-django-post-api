@@ -1,0 +1,38 @@
+[tool.black]
+line-length = 120
+target-version = ['py36', 'py37', 'py38', 'py39']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # The following are specific to Black, you probably don't want those.
+  | blib2to3
+  | tests/data
+  | profiling
+)/
+'''
+
+[tool.poetry]
+name = "blogapi"
+version = "0.1.0"
+description = "a blog api"
+authors = ["Omar Quimbaya <omar.quimbaya4@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+Django = "3.1.0"
+python-dotenv = "^0.19.2"
+djangorestframework = "3.11.0"
+dj-rest-auth = "1.1.0"
+django-allauth = "0.42.0"
+PyYAML = "5.3.1"
+uritemplate = "3.0.1"
+drf-yasg = "1.17.1"
+
+[tool.poetry.dev-dependencies]
+black = "^21.10b0"
+pre-commit = "^2.15.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
